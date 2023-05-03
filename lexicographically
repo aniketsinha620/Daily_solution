@@ -1,0 +1,45 @@
+//We have to find the next greater(just) permutation             <------
+
+
+
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& arr) {
+        int index=-1;
+
+        // find the index(y) of value arr[i]>arr[i-1](x)     <-----
+        for(int i=arr.size()-1;i>0;i--){
+            if(arr[i-1]<arr[i]){
+                  index=i;
+                  break;
+            }
+        }
+        
+
+        // check if permutation is already at the last permutation the revere or sort the permutation to get the answer    <------
+        if(index==-1){
+            reverse(arr.begin(),arr.end());
+        }
+
+
+        // find the just greater number of x                <-----
+        else{
+        int idx=index;
+
+        for(int i=index+1;i<arr.size();i++){
+            if(arr[i]>arr[idx-1] && arr[i]<=arr[index])
+            index=i;
+        }
+        
+        
+        // swap the x with it just greater number          <-------
+        swap(arr[idx-1],arr[index]);
+
+        // reverse the permutation from y to end         <-------
+        reverse(arr.begin()+idx,arr.end());
+        
+        }
+
+    }
+};
