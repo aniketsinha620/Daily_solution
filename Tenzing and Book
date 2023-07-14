@@ -1,0 +1,66 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, x;
+        cin >> n >> x;
+
+        ll arr[n], brr[n], crr[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cin >> brr[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cin >> crr[i];
+        }
+
+        vector<int> v;
+        for (int i = 0; i < n; i++)
+        {
+            if ((x || arr[i]) != x)
+                break;
+            v.push_back(arr[i]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if ((x | brr[i]) != x)
+                break;
+            v.push_back(brr[i]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if ((x | crr[i]) != x)
+                break;
+            v.push_back(crr[i]);
+        }
+
+        ll ans = 0;
+        for (int i = 0; i < v.size(); i++)
+        {
+
+            ans = ans | v[i];
+        }
+        if (ans == x)
+        {
+            cout << "Yes" << endl;
+        }
+        else
+        {
+            cout << "No" << endl;
+        }
+    }
+    return 0;
+}
