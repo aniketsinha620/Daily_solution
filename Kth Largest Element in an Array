@@ -1,6 +1,9 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
 //o(nlog n) 
-class Solution {
-public:
     int findKthLargest(vector<int>& arr, int k) {
 
         sort(arr.begin(),arr.end());
@@ -8,13 +11,10 @@ public:
         return(arr[n-k]);
         
     }
-};
+
 
 
 //using priority_queue
-
-class Solution {
-public:
     int findKthLargest(vector<int>& arr, int k) {
 
      priority_queue<int> q;
@@ -33,5 +33,8 @@ public:
   
     return(-q.top());
     }
-}; 
+
+int main(){
+    
+}
 
