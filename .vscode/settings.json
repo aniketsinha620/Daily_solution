@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "ostream": "cpp",
         "xutility": "cpp",
         "iostream": "cpp",
@@ -43,6 +44,8 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "kadane algo": "cpp"
+        "kadane algo": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp"
     }
 }
